@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="5" skipped="5" tests="19" time="0.156" timestamp="2022-04-03T11:43:42.653783" hostname="DESKTOP-45SMTEL"><testcase classname="test_next" name="test_sqroot[64-8]" time="0.001" /><testcase classname="test_next" name="test_sqroot[16-4]" time="0.001" /><testcase classname="test_next" name="test_sqroot[25-5]" time="0.001" /><testcase classname="test_next" name="test_sqroot1[64-8]" time="0.001"><skipped type="pytest.xfail" message="" /></testcase><testcase classname="test_next" name="test_sqroot1[16-4]" time="0.001"><skipped type="pytest.xfail" message="" /></testcase><testcase classname="test_next" name="test_sqroot1[25-5]" time="0.001"><skipped type="pytest.xfail" message="" /></testcase><testcase classname="test_next" name="test_quar[1-5-6-d0]" time="0.002"><failure message="AssertionError: assert ((-3+0j), '= ...+0j), '= x2:') == ((-3+0j), (-2+0j))&#10;  At index 1 diff: '= x1' != (-2+0j)&#10;  Left contains 2 more items, first extra item: (-2+0j)&#10;  Use -v to get more diff">a = 1, b = 5, c = 6, d = ((-3+0j), (-2+0j)), setUp = None
+
+    @pytest.mark.parametrize("a,b,c,d",[(1,5,6,(-3+0j,-2+0j)),(5,6,4,(-0.6-0.6633249580710799j,-0.6+0.6633249580710799j))])
+    def test_quar(a,b,c,d,setUp):
+        r = next.quadratic(a,b,c)
+&gt;       assert r == d
+E       AssertionError: assert ((-3+0j), '= ...+0j), '= x2:') == ((-3+0j), (-2+0j))
+E         At index 1 diff: '= x1' != (-2+0j)
+E         Left contains 2 more items, first extra item: (-2+0j)
+E         Use -v to get more diff
+
+test_next.py:25: AssertionError</failure></testcase><testcase classname="test_next" name="test_quar[5-6-4-d1]" time="0.001"><failure message="AssertionError: assert ((-0.6-0.6633...99j), '= x2:') == ((-0.6-0.6633...49580710799j))&#10;  At index 1 diff: '= x1' != (-0.6+0.6633249580710799j)&#10;  Left contains 2 more items, first extra item: (-0.6+0.6633249580710799j)&#10;  Use -v to get more diff">a = 5, b = 6, c = 4, d = ((-0.6-0.6633249580710799j), (-0.6+0.6633249580710799j)), setUp = None
+
+    @pytest.mark.parametrize("a,b,c,d",[(1,5,6,(-3+0j,-2+0j)),(5,6,4,(-0.6-0.6633249580710799j,-0.6+0.6633249580710799j))])
+    def test_quar(a,b,c,d,setUp):
+        r = next.quadratic(a,b,c)
+&gt;       assert r == d
+E       AssertionError: assert ((-0.6-0.6633...99j), '= x2:') == ((-0.6-0.6633...49580710799j))
+E         At index 1 diff: '= x1' != (-0.6+0.6633249580710799j)
+E         Left contains 2 more items, first extra item: (-0.6+0.6633249580710799j)
+E         Use -v to get more diff
+
+test_next.py:25: AssertionError</failure></testcase><testcase classname="test_next" name="test_quar1[1-5-6-d0]" time="0.001" /><testcase classname="test_next" name="test_quar1[5-6-4-d1]" time="0.001" /><testcase classname="test_next" name="test_quar2[1-5-6-d0]" time="0.000"><skipped type="pytest.skip" message="unconditional skip">C:\Users\Nithin\PycharmProjects\assignment30\test_next.py:33: unconditional skip</skipped></testcase><testcase classname="test_next" name="test_quar2[5-6-4-d1]" time="0.000"><skipped type="pytest.skip" message="unconditional skip">C:\Users\Nithin\PycharmProjects\assignment30\test_next.py:33: unconditional skip</skipped></testcase><testcase classname="test_next" name="test_celfeh[37-98.60000000000001]" time="0.002" /><testcase classname="test_next" name="test_celfeh[29-84.2]" time="0.001" /><testcase classname="test_next" name="test_povneg[2-Positive number]" time="0.001"><failure message="AssertionError: assert (2, 'is Positive number.') == 'Positive number'">a = 2, b = 'Positive number', setUp = None
+
+    @pytest.mark.parametrize("a,b",[(2,"Positive number"),(-1,"Negative number"),[0,"zero number"]])
+    def test_povneg(a,b,setUp):
+        r = next.povandneg(a)
+&gt;       assert r == b
+E       AssertionError: assert (2, 'is Positive number.') == 'Positive number'
+
+test_next.py:47: AssertionError</failure></testcase><testcase classname="test_next" name="test_povneg[-1-Negative number]" time="0.001"><failure message="AssertionError: assert (-1, 'is Negative number.') == 'Negative number'">a = -1, b = 'Negative number', setUp = None
+
+    @pytest.mark.parametrize("a,b",[(2,"Positive number"),(-1,"Negative number"),[0,"zero number"]])
+    def test_povneg(a,b,setUp):
+        r = next.povandneg(a)
+&gt;       assert r == b
+E       AssertionError: assert (-1, 'is Negative number.') == 'Negative number'
+
+test_next.py:47: AssertionError</failure></testcase><testcase classname="test_next" name="test_povneg[0-zero number]" time="0.002"><failure message="AssertionError: assert (0, 'is zero number.') == 'zero number'">a = 0, b = 'zero number', setUp = None
+
+    @pytest.mark.parametrize("a,b",[(2,"Positive number"),(-1,"Negative number"),[0,"zero number"]])
+    def test_povneg(a,b,setUp):
+        r = next.povandneg(a)
+&gt;       assert r == b
+E       AssertionError: assert (0, 'is zero number.') == 'zero number'
+
+test_next.py:47: AssertionError</failure></testcase><testcase classname="test_next" name="test_sum[16-136]" time="0.001" /><testcase classname="test_next" name="test_sum[12-78]" time="0.001" /></testsuite></testsuites>
